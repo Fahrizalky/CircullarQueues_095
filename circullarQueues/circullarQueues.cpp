@@ -19,7 +19,7 @@ public:
 		cout << endl;
 
 		//Cek apakah antrian penuh
-		if ((FRONT == 0 & REAR == max - 1) || (FRONT + 1)) {
+		if ((FRONT == 0 & REAR == max -1) || (FRONT +1)) {
 			cout << "\nQueue overflow\n";
 			return;
 		}
@@ -31,11 +31,20 @@ public:
 		}
 		else {
 			//Jika REAR berada di posisi terakhir array, kembali ke awal array
-			if (REAR == max - 1)
+			if (REAR == max -1)
 				REAR = 0;
 			else
-				REAR = REAR + 1;
+				REAR = REAR +1;
 		}
+		queue_array[REAR] = num;
+	}
+
+	void remove() {
+		//Cek apakah antiran kosong
+		if (FRONT == -1) {
+			cout << "Queue underflow\n";
+			return;
+		}
+		cout << "\nThe element deleted from the queue is:" << queue_array[FRONT] << "\n";
+
 		
-
-
